@@ -94,10 +94,10 @@ class Queries extends React.Component{
 		            </div>
 		        </div>
 
-				<h1 className="h3 mb-2 text-gray-800">Registered Users</h1>
+				<h1 className="h3 mb-2 text-gray-800">Queries coming from audience</h1>
 			   	<div className="card shadow mb-4">
 			            <div className="card-header py-3">
-			              <h6 className="m-0 font-weight-bold text-primary">Users List</h6>
+			              <h6 className="m-0 font-weight-bold text-primary">Queries List</h6>
 			            </div>
 			            <div className="card-body">
 			              <div className="table-responsive">
@@ -131,10 +131,10 @@ class Queries extends React.Component{
 			              </div>
 			            </div>
 			    </div>
-			    <h1 className="h3 mb-2 text-gray-800">Registered Users</h1>
+			    <h1 className="h3 mb-2 text-gray-800">Queries coming from admins</h1>
 			   	<div className="card shadow mb-4">
 			            <div className="card-header py-3">
-			              <h6 className="m-0 font-weight-bold text-primary">Users List</h6>
+			              <h6 className="m-0 font-weight-bold text-primary">Queries List</h6>
 			            </div>
 			            <div className="card-body">
 			              <div className="table-responsive">
