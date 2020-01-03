@@ -11,7 +11,6 @@
     "@babel/runtime": "^7.7.6",
     "bcrypt": "^3.0.7",
     "chart.js": "2.8.0",
-    "history": "^4.10.1",
     "jquery": "^3.4.1",
     "meteor-node-stubs": "^1.0.0",
     "print-js": "^1.0.63",
@@ -24,8 +23,8 @@
     "react-tilt": "^0.1.4",
     "simpl-schema": "^1.5.6"
   },
-  "engines":{
-    "node":"12.6.0"
+  "engines": {
+    "node": "12.6.0"
   },
   "meteor": {
     "mainModule": {
