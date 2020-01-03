@@ -1,0 +1,15 @@
+.mf{
+    background: url('http://www.clker.com/cliparts/f/2/a/5/12065641911180157450alnilam_Stars_Pattern.svg.med.png');
+}
+.mh{
+    background: url('http://www.clker.com/cliparts/f/2/a/5/12065641911180157450alnilam_Stars_Pattern.svg.med.png');
+}
+#login-buttons-open-change-password.login-button, #login-buttons-logout.login-button{
+	background-color: #4e73df
+} 
+#login-dropdown-list{
+    width: fit-content;
+}
+.bg-cyan{
+	background-color: azure;
+}

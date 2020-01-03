@@ -1,0 +1,13 @@
+body {
+  font-weight: 800;
+  background: linear-gradient(89deg, #FFABEE 0%, #C9F9FE 100%); /* w3c */
+  color: black !important;
+}
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
