@@ -108,18 +108,18 @@ class Map extends React.Component{
 				.map(user=>{
 					const {firstname, lastname, devices} = user.profile;
 					const username = user.username;
-					const getList = (d) =>{
-					let deviceList='', ndl='';
-					for (var I = 0; I < d.length; I++)
-					{
-							if(I===0)
-								ndl = `[ ${d.length} devices ] -->`
-					       deviceList = ` ${d[I]} ,`
-					       ndl += deviceList;
-					       if(I===d.length-1)
-					       		return ndl
-					 }
-					}
+					// const getList = (d) =>{
+					// let deviceList='', ndl='';
+					// for (var I = 0; I < d.length; I++)
+					// {
+					// 		if(I===0)
+					// 			ndl = `[ ${d.length} devices ] -->`
+					//        deviceList = ` ${d[I]} ,`
+					//        ndl += deviceList;
+					//        if(I===d.length-1)
+					//        		return ndl
+					//  }
+					// }
 
 					let classList = '';
 					this.props.userList.filter(user=>user.profile.designation==='user' && user.profile.devices.length>0)
@@ -129,7 +129,7 @@ class Map extends React.Component{
 					return(
 						<tr key={user._id} className={classList}>
 							<td>{firstname} {lastname} ({username})</td>
-							<td>{getList(devices)}
+							<td>{devices}
 								<button className="btn btn-info btn-icon-split" style={{float:'right'}} onClick={()=>this.editMap(user)}>
 			                    <span className="text">Edit</span>
 			                  	</button>
