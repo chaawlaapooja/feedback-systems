@@ -136,9 +136,10 @@ class Mapp extends React.Component{
 				})
 	}
 	getUsersList(){
-		 this.props.userList
+		return this.props.userList
 				.filter(user=>user.profile.designation==='user')
 				.map(user=>{
+					console.log(user)
 					const {firstname, lastname} = user.profile;
 					const username = user.username;
 					return(
@@ -147,7 +148,7 @@ class Mapp extends React.Component{
 				})
 	}
 	getDeviceList(){
-		 this.props.deviceList
+		return this.props.deviceList
 				.filter(device=>device.sold===false)
 				.map(device=>
 			<option key={device._id} value={device.id}>{device.id}</option>
