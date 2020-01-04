@@ -81,9 +81,9 @@ new SimpleSchema({
 		Meteor.users.update({_id},{$push:{"profile.devices":deviceId}})
 	},
     'user.setDevices':function(_id, devices){
-        new SimpleSchema({
-            devices:{type:Array}
-        }).validate({devices})
+        // new SimpleSchema({
+        //     devices:{type:Array}
+        // }).validate({devices})
         Meteor.users.update({_id},{$set:{"profile.devices":devices}})
     },
     'user.block':function(_id, status){

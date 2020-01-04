@@ -53,8 +53,8 @@ class User extends React.Component{
 	}
 	checkGST(){
 		this.refs.companygst.value=this.refs.companygst.value.toUpperCase()
-	let result = /\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}/.test(this.refs.companygst.value)
-     result && this.refs.companygst.value.length===15 ? this.setState({gst:''}):this.setState({gst:'Please enter correct GST'})
+	  let result = /\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}/.test(this.refs.companygst.value)
+    result && this.refs.companygst.value.length===15 ? this.setState({gst:''}):this.setState({gst:'Please enter correct GST'})
 	}
 	renderData(){
 		return this.props.userList
