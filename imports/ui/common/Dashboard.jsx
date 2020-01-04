@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Device from '../admin/Device'
 import User from '../admin/User'
 import EditUser from '../admin/EditUser'
-import Map from '../admin/Map'
+import Mapp from '../admin/Map'
 import Queries from '../admin/Queries'
 
 import UserDashboard from '../user/UserDashboard';
@@ -37,7 +37,7 @@ renderComponent(){
 	else if(component==='editUser')
 		return <EditUser />
 	else if(component==='map')
-		return <Map />
+		return <Mapp />
 	else if(component==='queries')
 		return <Queries />
 	else if(component==='dashboard')

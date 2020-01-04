@@ -3,7 +3,7 @@ import {withTracker} from 'meteor/react-meteor-data';
 import {Device} from '/imports/api/Device';
 import Modal from 'react-awesome-modal';
 
-class Map extends React.Component{
+class Mapp extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
@@ -135,7 +135,6 @@ class Map extends React.Component{
 				})
 	}
 	getUsersList(){
-		this.props.userList?
 		 this.props.userList
 				.filter(user=>user.profile.designation==='user')
 				.map(user=>{
@@ -144,15 +143,14 @@ class Map extends React.Component{
 					return(
 						<option key={user._id} value={user._id}>{firstname} {lastname} ({username})</option>
 					)
-				}):undefined
+				})
 	}
 	getDeviceList(){
-		this.props.deviceList.length>0?
 		 this.props.deviceList
 				.filter(device=>device.sold===false)
 				.map(device=>
 			<option key={device._id} value={device.id}>{device.id}</option>
-		):undefined
+		)
 	}
 	render(){
 		return(
@@ -260,4 +258,4 @@ export default withTracker(()=>{
 		userList : Meteor.users.find().fetch(),
 		deviceList : Device.find().fetch(),
 	}
-})(Map)
+})(Mapp)
