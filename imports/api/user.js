@@ -63,7 +63,8 @@ new SimpleSchema({
 				companyaddress,
 				companydetails,
 				status:'active',
-				designation:'user'
+				designation:'user',
+                devices:[]
 			}
 		})
 	},

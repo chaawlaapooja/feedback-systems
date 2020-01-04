@@ -105,15 +105,15 @@ class Mapp extends React.Component{
 				.map(user=>{
 					const {firstname, lastname, devices} = user.profile;
 					const username = user.username;
-					const getList = (devices) =>{
+					const getList = (d) =>{
 					let deviceList='', ndl='';
-					for (var I = 0; I < devices.length; I++)
+					for (var I = 0; I < d.length; I++)
 					{
 							if(I===0)
-								ndl = `[ ${devices.length} devices ] -->`
-					       deviceList = ` ${devices[I]} ,`
+								ndl = `[ ${d.length} devices ] -->`
+					       deviceList = ` ${d[I]} ,`
 					       ndl += deviceList;
-					       if(I===devices.length-1)
+					       if(I===d.length-1)
 					       		return ndl
 					 }
 					}
@@ -139,7 +139,6 @@ class Mapp extends React.Component{
 		return this.props.userList
 				.filter(user=>user.profile.designation==='user')
 				.map(user=>{
-					console.log(user)
 					const {firstname, lastname} = user.profile;
 					const username = user.username;
 					return(
