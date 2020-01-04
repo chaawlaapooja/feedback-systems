@@ -103,7 +103,8 @@ class Map extends React.Component{
 			return <p>No mapping yet</p>
 		else
 		return this.props.userList
-				.filter(user=>user.profile.designation==='user' && user.profile.devices.length>0)
+				.filter(user=>user.profile.designation==='user')
+				.filter(user=>user.profile.devices.length>0)
 				.map(user=>{
 					const {firstname, lastname, devices} = user.profile;
 					const username = user.username;
