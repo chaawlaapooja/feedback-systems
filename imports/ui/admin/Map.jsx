@@ -136,7 +136,7 @@ class Map extends React.Component{
 	}
 	getUsersList(){
 		this.props.userList?
-		return this.props.userList
+		 this.props.userList
 				.filter(user=>user.profile.designation==='user')
 				.map(user=>{
 					const {firstname, lastname} = user.profile;
@@ -148,7 +148,7 @@ class Map extends React.Component{
 	}
 	getDeviceList(){
 		this.props.deviceList.length>0?
-		return this.props.deviceList
+		 this.props.deviceList
 				.filter(device=>device.sold===false)
 				.map(device=>
 			<option key={device._id} value={device.id}>{device.id}</option>
