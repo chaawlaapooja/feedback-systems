@@ -99,27 +99,23 @@ class Map extends React.Component{
     }
 
 	renderData(){
-		if(this.props.userList.length<1)
-			return <p>No mapping yet</p>
-		else
 		return this.props.userList
-				.filter(user=>user.profile.designation==='user')
-				.filter(user=>user.profile.devices.length>0)
+				.filter(user=>user.profile.designation==='user' && user.profile.devices.length>0)
 				.map(user=>{
 					const {firstname, lastname, devices} = user.profile;
 					const username = user.username;
-					// const getList = (d) =>{
-					// let deviceList='', ndl='';
-					// for (var I = 0; I < d.length; I++)
-					// {
-					// 		if(I===0)
-					// 			ndl = `[ ${d.length} devices ] -->`
-					//        deviceList = ` ${d[I]} ,`
-					//        ndl += deviceList;
-					//        if(I===d.length-1)
-					//        		return ndl
-					//  }
-					// }
+					const getList = (devices) =>{
+					let deviceList='', ndl='';
+					for (var I = 0; I < devices.length; I++)
+					{
+							if(I===0)
+								ndl = `[ ${devices.length} devices ] -->`
+					       deviceList = ` ${devices[I]} ,`
+					       ndl += deviceList;
+					       if(I===devices.length-1)
+					       		return ndl
+					 }
+					}
 
 					let classList = '';
 					this.props.userList.filter(user=>user.profile.designation==='user' && user.profile.devices.length>0)
@@ -129,7 +125,7 @@ class Map extends React.Component{
 					return(
 						<tr key={user._id} className={classList}>
 							<td>{firstname} {lastname} ({username})</td>
-							<td>{devices}
+							<td>{getList(devices)}
 								<button className="btn btn-info btn-icon-split" style={{float:'right'}} onClick={()=>this.editMap(user)}>
 			                    <span className="text">Edit</span>
 			                  	</button>
@@ -139,6 +135,7 @@ class Map extends React.Component{
 				})
 	}
 	getUsersList(){
+		this.props.userList?
 		return this.props.userList
 				.filter(user=>user.profile.designation==='user')
 				.map(user=>{
@@ -147,14 +144,15 @@ class Map extends React.Component{
 					return(
 						<option key={user._id} value={user._id}>{firstname} {lastname} ({username})</option>
 					)
-				})
+				}):undefined
 	}
 	getDeviceList(){
+		this.props.deviceList.length>0?
 		return this.props.deviceList
 				.filter(device=>device.sold===false)
 				.map(device=>
 			<option key={device._id} value={device.id}>{device.id}</option>
-		)
+		):undefined
 	}
 	render(){
 		return(
