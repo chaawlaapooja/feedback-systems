@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Device from '../admin/Device'
 import User from '../admin/User'
 import EditUser from '../admin/EditUser'
-import Mapp from '../admin/Map'
+import Mapp from '../admin/Mapp'
 import Queries from '../admin/Queries'
 
 import UserDashboard from '../user/UserDashboard';
