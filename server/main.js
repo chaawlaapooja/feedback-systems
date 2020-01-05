@@ -30,7 +30,7 @@ Meteor.startup(() => {
     if(id===undefined || value===undefined){
         res.end('Please enter correct device id and value')
     }
-    else if(value!==1 || value!==2 || value!==3 || value!==4){
+    else if(value!=='1' && value!=='2' && value!=='3' && value!=='4'){
         res.end('Values can only range from 1 to 4.')
     }
     else{
