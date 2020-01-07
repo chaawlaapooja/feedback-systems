@@ -3,9 +3,23 @@ import {Device} from '/imports/api/Device'
 import {Query} from '/imports/api/Query'
 import {User} from '/imports/api/user'
 import { WebApp } from 'meteor/webapp';
-
+import {Email} from 'meteor/email'
+import {Accounts} from 'meteor/accounts-base';
 
 Meteor.startup(() => {
+  //Accounts.setPassword(userId, new password, [options](by default logout user from all clients)) server side
+  //Accounts.setPassword('ZZFfdPSrZx3Q6vCEK', '123456')
+  //Accounts.forgotPassword({email},[callback]) only on client side
+ // Accounts.forgotPassword({email:'chaawlaapooja@gmail.com'},(err)=>console.log(err))
+  //Accounts.sendResetPasswordEmail(userId, [email], [extraTokenData]) on server side
+  //Accounts.sendVerificationEmail(userId, [email], [extraTokenData])
+  
+//   Email.send({
+//   to: "chaawlaapooja@gmail.com",
+//   from: "demostudentp@gmail.com",
+//   subject: "Example Email",
+//   text: "The contents of our email in plain text.",
+// });
   // code to run on server at startup
   Meteor.publish('users', function(){
   		return Meteor.users.find()

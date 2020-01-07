@@ -55,38 +55,42 @@ Meteor.methods({
 			let feedbackObj={};
 			if(value==='1'){
 				feedbackObj={
-					date:dt,
+					
 					one:1,
 					two:0,
 					three:0,
-					four:0
+					four:0,
+					date:dt,
 				}
 			}
 			else if(value==='2'){
 				feedbackObj={
-					date:dt,
+					
 					one:0,
 					two:1,
 					three:0,
-					four:0
+					four:0,
+					date:dt,
 				}
 			}
 			else if(value==='3'){
 				feedbackObj={
-					date:dt,
+					
 					one:0,
 					two:0,
 					three:1,
-					four:0
+					four:0,
+					date:dt,
 				}
 			}
 			else if(value==='4'){
 				feedbackObj={
-					date:dt,
+					
 					one:0,
 					two:0,
 					three:0,
-					four:1
+					four:1,
+					date:dt,
 				}
 			}
 		if(f===0){

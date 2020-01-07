@@ -133,7 +133,14 @@ new SimpleSchema({
                 "profile.companydetails":companydetails
             }}
         )
-    }
+    },
+    sendVerificationLink(){
+        let userId = Meteor.userId();
+        if ( userId ) {
+          console.log("Email has been sent");
+          return Accounts.sendVerificationEmail( 'ZZFfdPSrZx3Q6vCEK' );
+        }
+      }
 })
 
 
