@@ -188,7 +188,7 @@ class DatewiseReports extends React.Component{
 			</div>
 			
 			</div>
-			{this.state.device || this.state.date?
+			
 			<div id='data'>
 				<button className="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onClick={()=>this.generateReport()}><i className="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
     			<div id='print-form'>
@@ -200,8 +200,8 @@ class DatewiseReports extends React.Component{
 				            <div className="card-header py-3">
 				              <h6 className="m-0 font-weight-bold text-primary">
 				              Feedback by numbers 
-				              {this.state.date? ` on ${new Date(this.state.date).toDateString()}`: undefined}</h6>
-				              {this.state.device? ` for Device Id ${this.state.device}`:' for all devices'} 
+				              {this.state.date? ` on ${new Date(this.state.date).toDateString()}`: undefined}
+				              {this.state.device? ` for Device Id ${this.state.device}`:' for all devices'} </h6>
 				            </div>
 				            <div className="card-body">
 				              <div className="table-responsive">
@@ -231,7 +231,7 @@ class DatewiseReports extends React.Component{
 				    </div>
 				</div>
 			</div>
-    		:undefined}
+    		
 			</div>
 		)
 	}

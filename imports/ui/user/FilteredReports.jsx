@@ -13,11 +13,17 @@ class FilteredReports extends React.Component{
 			data:[]
 		}
 	}
+
 	onDeviceChange(){
 		this.setState({device:this.refs.id.value})
-		this.initializeChart(this.props.config)
+		this.initializeChart()
 	}
-	
+	componentDidMount() {
+        this.initializeChart(this.props.config);
+    }
+    // componentDidUpdate() {
+    //     this.initializeChart(this.props.config);
+    // }
 	initializeChart(options) {
 		
 		function sumObjectsByKey(...objs) {
@@ -150,10 +156,10 @@ class FilteredReports extends React.Component{
 			<div>
 			Select Device :
 			<select ref="id" style={{margin:'2%'}} onChange={()=>this.onDeviceChange()}>
-				<option value=''></option>
+				<option></option>
 				{this.getDevices()}
 			</select>
-			{this.state.device?<div id='data'>
+			{this.refs.id?<div id='data'>
 			<button className="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onClick={()=>this.generateReport()}><i className="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
     		<div id='print-form'>
     		
