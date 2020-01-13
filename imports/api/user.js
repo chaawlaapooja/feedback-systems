@@ -134,13 +134,16 @@ new SimpleSchema({
             }}
         )
     },
+    'user.resetPassword':function(_id){
+        Accounts.setPassword(_id, '123456')
+    },
     sendVerificationLink(){
         let userId = Meteor.userId();
         if ( userId ) {
           console.log("Email has been sent");
           return Accounts.sendVerificationEmail( 'ZZFfdPSrZx3Q6vCEK' );
         }
-      }
+    }
 })
 
 

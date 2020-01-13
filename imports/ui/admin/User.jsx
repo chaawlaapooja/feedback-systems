@@ -135,7 +135,7 @@ class User extends React.Component{
                 </span>
                 </div>
                 <div className="form-group">
-                  <input type="text" className="form-control form-control-user" ref="companyaddress" placeholder="Company Address" required/>
+                  <input type="text" className="form-control form-control-user" ref="companyaddress" placeholder="Company Address" pattern=".{10,}" title="Address must be min 10 characters" required/>
                 </div>
                 <div className="form-group">
                   <input type="text" className="form-control form-control-user" ref="companydetails" placeholder="Company Details"/>

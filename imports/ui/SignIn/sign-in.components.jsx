@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link, browserHistory} from 'react-router'
 import '/imports/css/sb-admin2.min.css';
 
 class SignIn extends React.Component {
@@ -39,7 +39,8 @@ class SignIn extends React.Component {
   render() {
     return(
     	<div className="container">
-
+        <Link to='/' style={{color:'black', margin:'2%'}}><h2>Feedback-Systems</h2></Link>
+    
     <div className="row justify-content-center">
 
       <div className="col-xl-10 col-lg-12 col-md-9">
@@ -48,7 +49,7 @@ class SignIn extends React.Component {
           <div className="card-body p-0">
             
             <div className="row">
-              <div className="col-lg-6 d-none d-lg-block bg-login-image" onClick={()=>window.location.href='/'}></div>
+              <div className="col-lg-6 d-none d-lg-block bg-login-image" onClick={()=>browserHistory.replace('/')}></div>
               <div className="col-lg-6">
                 <div className="p-5">
                   <div className="text-center">
@@ -69,10 +70,10 @@ class SignIn extends React.Component {
                     </button>
               
                   </form>
-                  {/*<hr/>
+                  <hr/>
                   <div className="text-center">
-                                      <a className="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>*/}
+                     <Link className="small" to="/forgot-password">Forgot Password?</Link>
+                  </div>
                 </div>
               </div>
             </div>

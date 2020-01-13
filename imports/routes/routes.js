@@ -8,9 +8,10 @@ import NotFound from '../ui/NotFound';
 import LandingPage from '../ui/LandingPage';
 import Dashboard from '/imports/ui/common/Dashboard'
 import SignIn from '/imports/ui/SignIn/sign-in.components'
+import ForgotPassword from '/imports/ui/ForgotPassword';
 
 //const history = createBrowserHistory()
-const unauthenticatedPages = ['/', '/signin'];
+const unauthenticatedPages = ['/', '/signin', '/forgot-password'];
 const authenticatedPages = [];
 
 const onEnterPublicPage = () => {
@@ -36,14 +37,14 @@ const onEnterPrivatePage = () => {
       {
         let unauthenticatedPagesLength = unauthenticatedPages.length
         unauthenticatedPages.splice(0,unauthenticatedPagesLength)
-        unauthenticatedPages.push('/','/signin','/dashboard','/filteredReports','/datewiseReports','/contact','/profile')
+        unauthenticatedPages.push('/','/signin', '/forgot-password','/dashboard','/filteredReports','/datewiseReports','/contact','/profile')
         
       }
       else if(Meteor.user().profile.designation==='user')
       {
           let unauthenticatedPagesLength = unauthenticatedPages.length
           unauthenticatedPages.splice(0,unauthenticatedPagesLength)
-          unauthenticatedPages.push('/','/signin','/adminpanel','/device','/user','/map','/editUser','/queries')
+          unauthenticatedPages.push('/','/signin','/forgot-password','/adminpanel','/device','/user','/map','/editUser','/queries')
       }
      }
     if(unauthenticatedPages.includes(pathname)){
@@ -81,6 +82,7 @@ export const routes = (
   <Router history={browserHistory}>
   		<Route path="/" component={LandingPage} onEnter={onEnterPublicPage}/>
     	<Route path="/signin" component={SignIn} onEnter={onEnterPublicPage}/>
+      <Route path="/forgot-password" component={ForgotPassword} onEnter={onEnterPublicPage}/>
       
       <Route path="/adminpanel" component={Dashboard} level='admin' onEnter={onEnterPrivatePage}/>
     	<Route path="/device" component={Dashboard} level='admin' onEnter={onEnterPrivatePage}/>

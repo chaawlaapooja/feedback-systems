@@ -1,6 +1,7 @@
 import React from 'react';
 import './c.css';
 import {withTracker} from 'meteor/react-meteor-data';
+import Logo from '/imports/ui/Logo/Logo.js'
 
 class Contact extends React.Component{
 	constructor(){
@@ -49,7 +50,9 @@ class Contact extends React.Component{
           <div className="row">
               <div className="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
                 <p>We would love to get in touch with you to provide you high quality service, as promised. Please fill in the form and someone from our team will get in touch with you soon!</p>
-                <br/>
+                
+                <Logo/>
+                
                 <div className="find-widget">
                  Company:  <a href="https://www.shreeinfosys.in/" target="_blank">Shree Infosystem</a>
                 </div>
