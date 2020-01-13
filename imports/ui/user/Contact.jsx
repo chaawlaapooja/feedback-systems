@@ -77,6 +77,7 @@ class Contact extends React.Component{
               </div>
               <div className="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
                   <form className="shake" role="form" id="contactForm" onSubmit={this.handleSubmit.bind(this)}>
+                      <br/><br/>
                       <div className="form-group label-floating">
                         <label className="control-label" >Name</label>
                         <input className="form-control" type="text" ref="name" required data-error="Please enter your name" value={Meteor.user()?Meteor.user().profile.firstname + ' ' + Meteor.user().profile.lastname : undefined} readOnly/>
