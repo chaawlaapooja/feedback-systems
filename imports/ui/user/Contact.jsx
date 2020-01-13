@@ -51,19 +51,23 @@ class Contact extends React.Component{
                 <p>We would love to get in touch with you to provide you high quality service, as promised. Please fill in the form and someone from our team will get in touch with you soon!</p>
                 <br/>
                 <div className="find-widget">
-                 Company:  <a href="#">Feedback-Systems</a>
+                 Company:  <a href="https://www.shreeinfosys.in/" target="_blank">Shree Infosystem</a>
                 </div>
                 <br/>
                 <div className="find-widget">
-                 Address: <a href="#">Gujarat, India</a>
+                 Address: <a href="https://www.google.com/maps/place/Shree+Infosystem(A+Google+Cloud+Partner+Company)/@21.1892238,72.8111252,15z/data=!4m5!3m4!1s0x0:0xbb85efdb7cddf642!8m2!3d21.1892238!4d72.8111252" target="_blank">606-607, River Palace, Near Bahumali Building, Nanapura, Surat, Gujarat, India - 395001 </a>
                 </div>
                 <br/>
                 <div className="find-widget">
-                  Phone:  <a href="#">+91- XXX-XXX-XXXX</a>
+                  Phone:  <a href="tel:+919426484346" target="_blank">+91-94264 84346</a>
                 </div>
                 <br/>
                 <div className="find-widget">
-                  Website:  <a href="#">www.feedbacksystems.com</a>
+                  Website:  <a href="https://www.shreeinfosys.in/">www.shreeinfosys.in</a>
+                </div>
+                <br/>
+                <div className="find-widget">
+                  Mail:  <a href="mailto:info@shreeinfosys.in" target="_blank">info@shreeinfosys.in</a>
                 </div>
                 <br/>
                 

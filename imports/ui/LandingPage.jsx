@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 import Logo from './Logo/Logo.js'
 import './lp.css'
 import Contact from '/imports/ui/user/Contact';
-
+import Footer from '/imports/ui/common/Footer';
 const particlesOptions = {
   particles: {
     number: {
@@ -37,6 +37,8 @@ const LandingPage = () => {
         </ul>
         </div>
         <Contact/>
+        <br/>
+        <Footer/>
     </div>
   );
 };
