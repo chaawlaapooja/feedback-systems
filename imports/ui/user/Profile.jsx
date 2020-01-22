@@ -85,8 +85,7 @@ class Profile extends React.Component{
                 <div className="form-group">
                   <input type="text" className="form-control form-control-user" ref="companydetails" placeholder="Company Details" defaultValue={Meteor.user()?Meteor.user().profile.companydetails:undefined}/>
                 </div>
-                <input type='submit' value='Save Changes' className="btn btn-primary btn-user btn-block"/>
-                <hr/>
+                <center><input type='submit' value='Save Changes' className="btn btn-primary btn-user"/></center>
               </form>
             </div>
           </div>
