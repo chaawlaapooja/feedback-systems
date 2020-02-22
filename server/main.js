@@ -35,35 +35,72 @@ Meteor.startup(() => {
   })
 
   WebApp.connectHandlers.use((req, res, next) => {
-    if(!req.url.includes('/save')){
+    if(!req.url.includes('/save') && !req.url.includes('/count')){
       next()
     }
-    else{
-    const id = req.query.id
-    const value = req.query.value
-    if(id===undefined || value===undefined){
-        res.end('Please enter correct device id and value')
-    }
-    else if(value!=='1' && value!=='2' && value!=='3' && value!=='4'){
-        res.end('Values can only range from 1 to 4.')
-    }
-    else{
-      let foundDevice = Device.find({id, sold:true}).fetch()
-      if(foundDevice.length===1){
-        Meteor.call('device.save', id, value, (err)=>{
-          if(err){
-            res.end('error saving feedback')
+    else
+    {
+      if(req.url.includes('/save')){
+        const id = req.query.id
+        const value = req.query.value
+        if(id===undefined || value===undefined || id==='' || value===''){
+            res.end('Please enter correct device id and value')
+        }
+        else if(value!=='1' && value!=='2' && value!=='3' && value!=='4'){
+            res.end('Values can only range from 1 to 4.')
+        }
+        else{
+          let foundDevice = Device.find({id, sold:true}).fetch()
+          if(foundDevice.length===1){
+            Meteor.call('device.save', id, value, (err)=>{
+              if(err){
+                res.end('error saving feedback')
+              }
+              else{
+                res.end('success')
+              }
+            }) 
           }
           else{
-            res.end('success')
+            res.statusCode = 404;
+            res.end('No device found with such id. Either the device id is not registered or it is unsold')
           }
-        }) 
+        } 
       }
-      else{
-        res.statusCode = 404;
-        res.end('No device found with such id. Either the device id is not registered or it is unsold')
+      else if(req.url.includes('/count')){
+        const id = req.query.id
+        const fbtype = req.query.fbtype
+        if(id===undefined || fbtype===undefined || id==='' || fbtype===''){
+            res.end('Please enter correct device id and feedback type')
+        }
+        else if(fbtype!=='1' && fbtype!=='2' && fbtype!=='3' && fbtype!=='4'){
+            res.end('Feedback type can only range from 1 to 4.')
+        }
+        else{
+          let foundDevice = Device.find({id, sold:true}).fetch()
+          if(foundDevice.length===1){
+            let key = ''
+            if(fbtype==='1')
+              key='one'
+            else if(fbtype==='2')
+              key='two'
+            else if(fbtype==='3')
+              key='three'
+            else if(fbtype==='4')
+              key='four'
+            let feedbacks = foundDevice[0].feedbacks
+            var count=0
+            for(var i=0; i<feedbacks.length; i++){
+              count = parseInt(feedbacks[i][key]) + count
+            }
+            res.end(count.toString())
+          }
+          else{
+            res.statusCode = 404;
+            res.end('No device found with such id. Either the device id is not registered or it is unsold')
+          }
+        } 
       }
-    } 
-  }
+    }
   });
 });
