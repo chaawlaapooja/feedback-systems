@@ -11,7 +11,7 @@
     "@babel/runtime": "^7.7.6",
     "bcrypt": "^3.0.7",
     "chart.js": "2.8.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "print-js": "^1.0.63",
     "react": "^16.12.0",
